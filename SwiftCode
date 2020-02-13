@@ -1,0 +1,168 @@
+//
+
+//  main.swift
+
+//  feb13
+
+//
+
+//  Created by MacStudent on 2020-02-13.
+
+//  Copyright © 2020 MacStudent. All rights reserved.
+
+//
+
+
+
+import Foundation
+
+func StuNameSearch(StuName: [String],StuGrades: [Double],name: String) -> Int{
+
+    for i in 0..<StuName.count{
+
+        if name == StuName[i]{
+
+            print(StuName)
+
+            print(StuGrades)
+
+        }
+
+    }
+
+    return -1
+
+}
+
+func StuPass(StuName: [String],StuGrades: [Double]){
+
+    for i in 0...StuGrades.count{
+
+    if(StuGrades[i] >= 40.0)
+
+    {print(StuName)
+
+}
+
+    }
+
+}
+
+    func StuMax(StuName: [String],StuGrades: [Double]){
+
+        var max:Double  = 0.0
+
+        for i in 0...StuGrades.count{
+
+            if(StuGrades[i] > max){
+
+                max = StuGrades[i]
+
+            }
+
+            print(StuName[i])
+
+            print(StuGrades[i])
+
+        }
+
+        
+
+    }
+
+    func StuPassRate(StuGrades: [Double]){
+
+        for i in 0..<StuGrades.count{
+
+            if StuGrades[i] >= 40{
+
+                var rate: Int = 0
+
+                rate += 1
+
+                let success = (rate / StuGrades.count) * 100
+
+                print(success)
+
+            }
+
+            
+
+        }
+
+    }
+
+    
+
+print("Hello, World!")
+
+
+
+var StuName=[String]()
+
+
+
+var StuGrades=[Double]()
+
+
+
+
+
+print("What do you wanna do next?")
+
+print("Press 0 to enter the next Student name and its Grades")
+
+print("Press 1 to search a student by name")
+
+print("Press 2 to find the students who passed ")
+
+print("Press 3 to print all anmes and grades of students who achieved the maximum grades")
+
+print("Press 4 Find the success rate")
+
+    let x = Int(readLine()!)!
+
+repeat{
+
+switch x{
+
+case 0: print("Enter the name of the student")
+
+   StuName.append(readLine()!)
+
+   print("Enter The grade of student")
+
+   StuGrades.append(Double(readLine()!)!)
+    print(StuName)
+    print(StuGrades)
+
+       break
+
+case 1:print("Enter The name of the Student you want to search")
+
+        let name = readLine()!
+
+        _ = StuNameSearch(StuName: StuName,StuGrades: StuGrades,name: name)
+
+            break
+
+case 2:_ = StuPass(StuName: StuName, StuGrades: StuGrades)
+
+        break
+
+case 3:_ = StuMax(StuName: StuName, StuGrades: StuGrades)
+
+        break
+
+case 4:_ = StuPassRate(StuGrades: StuGrades)
+
+        break
+
+default:print("Thank You")
+
+    
+
+    }
+
+
+}while x != 0
